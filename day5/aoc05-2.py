@@ -43,7 +43,9 @@ class Solution():
             for succ in graph[node]:
                 indegree[page_hash[succ]] -= 1
                 if indegree[page_hash[succ]] == 0:
-                    zero_indegree.appendleft(succ)
+                    # THE MOST IMPORTANT LINE IN THIS PROBLEM THAT IS NOT MENTIONED IN THE DESCRIPTION. 
+                    # YOU NEED TO ADD THE ZERO DEGREE PAGES TO THE LEFT OF THE QUEUE
+                    zero_indegree.appendleft(succ) 
 
         mid_page = sorted_order[len(sorted_order)//2]
         return int(mid_page)
